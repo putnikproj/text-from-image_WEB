@@ -1,0 +1,140 @@
+html, body {
+    font-family: 'Jost', sans-serif;
+}
+
+.container {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.detected-text {
+    position: relative;
+}
+
+.detected-text__area {
+    resize: none;
+    overflow: auto;
+    width: 561px;
+}
+
+.loading {
+    margin-top: 20px;
+    position: relative;
+    left: -9px;
+}
+
+.loading__text {
+    display: inline-block;
+    position: relative;
+    font-size: 20px;
+    bottom: 20px;
+}
+
+.form__input-image {
+    height: 27px;
+    width: 476px;
+}
+
+.form__submit {
+    height: 27px;
+}
+
+.uploaded-img {
+    max-width: 500px;
+}
+
+.error-message {
+    background-color: #fbbfb5;
+    padding: 15px;
+    border-radius: 2px;
+    border: 2px solid #f79f98;
+}
+
+.type-of-upload {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.type-of-upload__button {
+    width: 130px;
+    padding: 0;
+    min-height: 35px;
+    border: none;
+    background-color: #F2F4F6;
+    border-radius: 2px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.type-of-upload__button:not(.active) {
+    cursor: pointer;
+}
+
+.type-of-upload__button:disabled {
+    background-color: #f1f1f1;
+}
+
+.type-of-upload__bar {
+    width: 130px;
+    display: block;
+    height: 2px;
+    background-color: #0043A4;
+    position: absolute;
+    bottom: 0;
+}
+
+.bar-disabled {
+    background-color: #99abc5;
+}
+
+.type-of-upload__button:focus {
+    outline: none;
+}
+
+.bar-animation {
+    animation: animating-bar 0.6s cubic-bezier(0.83, 0, 0.17, 1) forwards;
+}
+
+.bar-reverse-animation {
+    animation: animating-bar-reverse 0.6s cubic-bezier(0.83, 0, 0.17, 1) forwards;
+}
+
+@keyframes animating-bar {
+    0% {
+        width: 130px;
+    }
+
+    50% {
+        width: 260px;
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(130px);
+        width: 130px;
+    }
+}
+
+@keyframes animating-bar-reverse {
+    0% {
+        transform: translateX(130px);
+        width: 130px;
+    }
+
+    50% {
+        width: 260px;
+        transform: translateX(0);
+    }
+
+    to {
+        width: 130px;
+    }
+}

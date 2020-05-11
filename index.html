@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Text from image with OCR</h1>
+        <h2>Choose image</h2>
+        <div class="type-of-upload">
+            <button class="type-of-upload__button upload-by-url active">URL</button><button class="type-of-upload__button upload-by-comp">COMPUTER</button>
+            <span class="type-of-upload__bar"></span>
+        </div>
+        <form class="form" action="https://api.ocr.space/parse/image/" method="post">
+            <input class="input-image form__input-image" type="text" name="url" id="url" required>
+            <input class="input-image form__input-image-by-upload hidden" type="file" accept=".jpg, .jpeg, .png, .webp" name="comp" id="comp">
+            <select name="lang" id="lang">
+                <option value="rus">Русский</option>
+                <option value="eng" selected>English</option>
+                <option value="ger">Deutsch</option>
+                <option value="fre">Français</option>
+            </select>
+            <button class="form__submit" type="submit">Detect text</button>
+        </form>
+        <div class="loading"></div>
+        <p class="error-message hidden"></p>
+        <h2>Detected text</h2>
+        <div class="detected-text"><textarea class="detected-text__area" name="" id="" cols="50" rows="10"></textarea></div>
+        <h2>Original image</h2>
+        <div class="image"></div>
+    </div>
+    <script src="js/textFromImage.js"></script>
+    <script src="js/chooseUploadType.js"></script>
+</body>
+</html>
