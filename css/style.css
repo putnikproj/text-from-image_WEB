@@ -3,8 +3,10 @@ html, body {
 }
 
 .container {
-    width: 900px;
-    margin: 0 auto;
+    min-width: 280px;
+    max-width: 900px;
+    margin: auto;
+    padding: 0 10px;
 }
 
 .hidden {
@@ -40,7 +42,13 @@ html, body {
 
 .form__input-image {
     height: 27px;
-    width: 476px;
+    width: 561px;
+    margin-bottom: 5px;
+}
+
+.form__input-image-by-upload {
+    margin-bottom: 5px;
+    width: 561px;
 }
 
 .form__submit {
@@ -48,7 +56,7 @@ html, body {
 }
 
 .uploaded-img {
-    max-width: 500px;
+    max-width: 561px;
 }
 
 .error-message {
@@ -80,6 +88,11 @@ html, body {
 
 .type-of-upload__button:disabled {
     background-color: #f1f1f1;
+}
+
+.type-of-upload__button:not(.active):hover {
+    transition: 0.3s all;
+    color: #033680;
 }
 
 .type-of-upload__bar {
@@ -136,5 +149,30 @@ html, body {
 
     to {
         width: 130px;
+    }
+}
+
+@media (max-width: 580px) {
+    .detected-text__area {
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .uploaded-img {
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .input-image {
+        width: 100%;
+        margin-right: 10px;
+    }
+}
+
+@media print {
+    .choose-image__title,
+    .type-of-upload,
+    .form {
+        display: none;
     }
 }

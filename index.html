@@ -2,29 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text form image</title>
+    <link rel="SHORTCUT ICON" href="img/search.ico" type="image/ico">
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
 </head>
 <body>
     <div class="container">
-        <h1>Text from image with OCR</h1>
-        <h2>Choose image</h2>
+        <header>
+            <h1>Text from image with OCR</h1>
+        </header>
+        <h2 class="choose-image__title">Choose image from</h2>
         <div class="type-of-upload">
             <button class="type-of-upload__button upload-by-url active">URL</button><button class="type-of-upload__button upload-by-comp">COMPUTER</button>
             <span class="type-of-upload__bar"></span>
         </div>
         <form class="form" action="https://api.ocr.space/parse/image/" method="post">
             <input class="input-image form__input-image" type="text" name="url" id="url" required>
-            <input class="input-image form__input-image-by-upload hidden" type="file" accept=".jpg, .jpeg, .png, .webp" name="comp" id="comp">
-            <select name="lang" id="lang">
-                <option value="rus">Русский</option>
-                <option value="eng" selected>English</option>
-                <option value="ger">Deutsch</option>
-                <option value="fre">Français</option>
-            </select>
-            <button class="form__submit" type="submit">Detect text</button>
+            <input class="input-image form__input-image-by-upload hidden" type="file" accept=".pdf, .jpg, .png, .jpeg, .bmp, .gif, .tif, .tiff, .webp" name="comp" id="comp">
+            <div class="form__options">
+                <select name="lang" id="lang">
+                    <option value="eng" selected>English</option>
+                    <option value="rus">Русский</option>
+                    <option value="ger">Deutsch</option>
+                    <option value="fre">Français</option>
+                </select>
+                <button class="form__submit" type="submit">Detect text</button>
+            </div>
         </form>
         <div class="loading"></div>
         <p class="error-message hidden"></p>
